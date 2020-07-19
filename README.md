@@ -1,6 +1,8 @@
 # dataExploration
 This package contains various functions which I find useful for Data Exploration. This package will focus on visualization, transformation and performing tests.
 
+To install this package: devtools::install_github('akshayamrit/dataExploration')
+
 # Functions available:
   ## Graph:
     - graph.Univariate: This function lets the user perform univariate analysis of every column present in the dataframe by default. 
