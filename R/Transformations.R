@@ -21,17 +21,17 @@
 #' ## To convert columns into factors when unique values are less than a specified number.
 #' transform.Group_and_factor(mtcars, convertToFactorFlag = TRUE, conversionThreshold = 3)
 transform.Group_and_factor <- function(dataf, convertToFactorFlag = FALSE, conversionThreshold = 5) {
-     size <- ncol(dataf)
+        size <- ncol(dataf)
 
-     if (convertToFactorFlag) {
-          for (i in 1:size) {
-               number_of_uniques <- length(unique(dataf[, i]))
-               if (conversionThreshold >= number_of_uniques)
-                    dataf[, i] <- as.factor(dataf[, i])
-          }
-     }
+        if (convertToFactorFlag) {
+                for (i in 1:size) {
+                        number_of_uniques <- length(unique(dataf[, i]))
+                        if (conversionThreshold >= number_of_uniques)
+                                dataf[, i] <- as.factor(dataf[, i])
+                }
+        }
 
-     finalDF <- dataf[,names(sort(sapply(dataf,class)))]
+        finalDF <- dataf[,names(sort(sapply(dataf,class)))]
 
-     return(finalDF)
+        return(finalDF)
 }
