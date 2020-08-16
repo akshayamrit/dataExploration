@@ -4,7 +4,7 @@
 #' and user defined columns of the same dataset.
 #'     Note: Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 #'
-#' @usage test.Chisq(dataf, y, x, skipMessage = FALSE)
+#' @usage test.chisq(dataf, y, x, skipMessage = FALSE)
 #'
 #' @param dataf a (non-empty) dataframe.
 #' @param y a (non-empty) integer which points to the column which will be considered
@@ -17,8 +17,8 @@
 #' @return dataframe containing the result of the tests.
 #' @export
 #'
-#' @examples test.Chisq(mtcars, 1, 2:ncol(mtcars))
-test.Chisq <- function(dataf, y, x, skipMessage = FALSE) {
+#' @examples test.chisq(mtcars, 1, 2:ncol(mtcars))
+test.chisq <- function(dataf, y, x, skipMessage = FALSE) {
 
         if (!is.data.frame(dataf))
                 stop("The given object is not a data frame")
@@ -66,7 +66,7 @@ test.Chisq <- function(dataf, y, x, skipMessage = FALSE) {
 #' and user defined columns of the same dataset.
 #'     Note: Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 #'
-#' @usage test.T_test.Cat(dataf, y, x, skipMessage = FALSE)
+#' @usage test.t_test_cat(dataf, y, x, skipMessage = FALSE)
 #'
 #' @param dataf a (non-empty) dataframe.
 #' @param y a (non-empty) integer which points to the column which will be considered
@@ -79,8 +79,8 @@ test.Chisq <- function(dataf, y, x, skipMessage = FALSE) {
 #' @return dataframe containing the result of the tests.
 #' @export
 #'
-#' @examples test.T_test.Cat(mtcars, 2, 3:ncol(mtcars))
-test.T_test.Cat <- function(dataf, y, x, skipMessage = FALSE) {
+#' @examples test.t_test_cat(mtcars, 2, 3:ncol(mtcars))
+test.t_test_cat <- function(dataf, y, x, skipMessage = FALSE) {
 
         if (!is.data.frame(dataf))
                 stop("The given object is not a data frame")
@@ -130,7 +130,7 @@ test.T_test.Cat <- function(dataf, y, x, skipMessage = FALSE) {
 #' - Chi-Square Test
 #' - T-Test (Only when number of categories is 2 in target variable)
 #'
-#' @usage
+#' @usage test.all_cat(mtcars, 'cyl', 2:ncol(mtcars), tTest = FALSE)
 #'
 #'
 #' @param dataf a (non-empty) dataframe.
@@ -147,11 +147,11 @@ test.T_test.Cat <- function(dataf, y, x, skipMessage = FALSE) {
 #' @export
 #'
 #' @examples ## To perform every test.
-#' test.All.Cat(mtcars, 'vs', 3:ncol(mtcars))
+#' test.all_cat(mtcars, 'vs', 3:ncol(mtcars))
 #'
 #' ## To omit a specefic test.
-#' test.All.Cat(mtcars, 'cyl', 2:ncol(mtcars), tTest = FALSE)
-test.All.Cat <- function(dataf, y, x, chiSquare = TRUE, tTest = TRUE) {
+#' test.all_cat(mtcars, 'cyl', 2:ncol(mtcars), tTest = FALSE)
+test.all_cat <- function(dataf, y, x, chiSquare = TRUE, tTest = TRUE) {
         if (!is.data.frame(dataf))
                 stop("The given object is not a data frame")
         pred <- c()

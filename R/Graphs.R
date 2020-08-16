@@ -5,7 +5,7 @@
 #' visualizations for by assigning some value to the 'variable' argument. The user can also choose
 #' to export these visualizations in png format to the directory specified by the user.
 #'
-#' @usage graph.Univariate(dataf, variable = 1:ncol(dataf), generate.png = FALSE,
+#' @usage graph.univariate(dataf, variable = 1:ncol(dataf), generate.png = FALSE,
 #' generated.file.location = paste(getwd(), '/Images/Univariate'))
 #'
 #' @param dataf a (non-empty) DataFrame.
@@ -19,16 +19,16 @@
 #' @export
 #'
 #' @examples ## To generate visualization of every column.
-#' graph.Univariate(mtcars)
+#' graph.univariate(mtcars)
 #'
 #' ## To generate visualization of specefic columns.
-#' graph.Univariate(mtcars, variable = c(1,2,3))
+#' graph.univariate(mtcars, variable = c(1,2,3))
 #'
 #' ## To generate visualization and store it as image.
-#' graph.Univariate(mtcars, variable = c(1,2,3), generate.png = TRUE,
+#' graph.univariate(mtcars, variable = c(1,2,3), generate.png = TRUE,
 #' generated.file.location = paste(getwd(), '/Images/Univariate'))
 #'
-graph.Univariate <- function(dataf, variable = 1:ncol(dataf), generate.png = FALSE,
+graph.univariate <- function(dataf, variable = 1:ncol(dataf), generate.png = FALSE,
                              generated.file.location = paste(getwd(), '/Images/Univariate', sep = '')) {
 
         if (!is.data.frame(dataf))

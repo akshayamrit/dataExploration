@@ -4,7 +4,7 @@
 #' data types together. User has the option to convert the columns into factors
 #' according to the number of unique values present in the column.
 #'
-#' @usage transform.Group_and_factor(mtcars, convertToFactorFlag = FALSE, conversionThreshold = 5)
+#' @usage transform.group_and_factor(mtcars, convertToFactorFlag = FALSE, conversionThreshold = 5)
 #'
 #' @param dataf a (non-empty) DataFrame.
 #' @param convertToFactorFlag an optional (non-empty) boolean value which allows the user
@@ -16,11 +16,11 @@
 #' @export
 #'
 #' @examples ## To transform the dataframe to group columns according to data type.
-#' transform.Group_and_factor(mtcars)
+#' transform.group_and_factor(mtcars)
 #'
 #' ## To convert columns into factors when unique values are less than a specified number.
-#' transform.Group_and_factor(mtcars, convertToFactorFlag = TRUE, conversionThreshold = 3)
-transform.Group_and_factor <- function(dataf, convertToFactorFlag = FALSE, conversionThreshold = 5) {
+#' transform.group_and_factor(mtcars, convertToFactorFlag = TRUE, conversionThreshold = 3)
+transform.group_and_factor <- function(dataf, convertToFactorFlag = FALSE, conversionThreshold = 5) {
         size <- ncol(dataf)
 
         if (convertToFactorFlag) {
