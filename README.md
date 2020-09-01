@@ -13,7 +13,7 @@ To install this package: devtools::install_github('akshayamrit/dataExploration')
     User has the option to convert the columns into factors according to the number of unique values present in the column.
   ## Test:
     - test.chisq: This function performs chi square test between a categorical target variable and user defined columns of the same dataset.
-    - test.t_test.Cat: This function performs t test between a categorical target (upto 2 categories) and user defined columns of the same dataset.
-    - test.all_Cat: This function is a wrapper function which lets us run all tests meant for categorical target together.
+    - test.t_test_cat: This function performs t test between a categorical target (upto 2 categories) and user defined columns of the same dataset.
+    - test.all_cat: This function is a wrapper function which lets us run all tests meant for categorical target together.
   ## Organize:
     - organize.files: This function scans the source folder for the user provided type and then copies it to the other folder which can be used for organization. The organized folder doesn't have to exist.
