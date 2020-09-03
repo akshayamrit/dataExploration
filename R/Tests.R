@@ -170,9 +170,9 @@ test.all_cat <- function(dataf, y, x, chiSquare = TRUE, tTest = TRUE) {
 
         resultList <- list()
         if (chiSquare)
-                resultList$chiSquare <- test.Chisq(dataf, y, pred, TRUE)
+                resultList$chiSquare <- test.chisq(dataf, y, pred, TRUE)
         if (tTest)
-                resultList$tTest <- test.T_test.Cat(dataf, y, pred, TRUE)
+                resultList$tTest <- test.t_test_cat(dataf, y, pred, TRUE)
 
         return(resultList)
 }
