@@ -29,7 +29,7 @@
 #' generated.file.location = paste(getwd(), '/Images/Univariate'))
 #'
 graph.univariate <- function(dataf, variable = 1:ncol(dataf), generate.png = FALSE,
-                             generated.file.location = paste(getwd(), '/Images/Univariate', sep = '')) {
+                             generated.file.location = 'Images/Univariate') {
 
         if (!is.data.frame(dataf))
                 stop("The given object is not a data frame")
