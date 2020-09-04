@@ -8,4 +8,5 @@ Description: This package contains various functions which I find useful for Dat
      This package will focus on visualization, transformation and performing tests
 Encoding: UTF-8
 LazyData: true
+License: MIT + file LICENSE
 RoxygenNote: 7.1.1
