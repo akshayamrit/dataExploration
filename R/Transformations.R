@@ -173,12 +173,9 @@ transform.augment_impute <- function(dataf, variables = colnames(dataf), missing
                                                 print('Imputation cancelled')
                                         else
                                                 print('Wrong or Invalid option selected. Skipping imputation for this column')
-
                                 }
                         }
-
                 }
         }
         return(dataf)
-
 }
