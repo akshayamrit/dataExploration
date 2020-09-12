@@ -4,7 +4,7 @@
 \alias{transform.group_and_factor}
 \title{Groups columns together according to type.}
 \usage{
-transform.group_and_factor(mtcars, convertToFactorFlag = FALSE, conversionThreshold = 5)
+mtcars <- transform.group_and_factor(mtcars, convertToFactorFlag = FALSE, conversionThreshold = 5)
 }
 \arguments{
 \item{dataf}{a (non-empty) DataFrame.}

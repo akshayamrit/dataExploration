@@ -13,7 +13,7 @@
 #' while converting type of column to factor.
 #'
 #' @return transformed Dataframe
-#' @export
+#' @export transform.group_and_factor
 #'
 #' @examples ## To transform the dataframe to group columns according to data type.
 #' transform.group_and_factor(mtcars)
@@ -50,7 +50,7 @@ transform.group_and_factor <- function(dataf, convertToFactorFlag = FALSE, conve
 #' @param option the method to be used. options - 'mean', 'median' and 'mode'
 #'
 #' @return dataframe with imputed values
-#' @export
+#' @export transform.impute_option
 #'
 #' @examples # To get dataframe with mean imputed in 'wt' column.
 #' transform.impute_option(mtcars, 'wt', 'mean')
@@ -82,15 +82,20 @@ transform.impute_option <- function(dataf, variable.name, option) {
 #'
 #' @usage kc_complete <- transform.augment_impute(kc_complete)
 #'
-#' @param dataf a (non-empty) Dataframe
+#' @param dataf a (non-empty) Dataframe.
 #' @param variables a list of (non-empty) column names with missing values. all columns
 #' are considered by default.
-#' @param missingThreshold a (non-empty) number between 0 to 1
+#' @param missingThreshold a (non-empty) proportion of missing values to consider
+#' for imputation lying between 0 to 1.
 #'
-#' @return
-#' @export
+#' @return dataframe with imputed values.
+#' @export transform.augment_impute
 #'
-#' @examples
+#' @examples # To impute in all the columns with less than 30% missing values.
+#' transform.augment_impute(kc_complete)
+#'
+#' # To impute in specefic columns with less than 10% missing values.
+#' transform.augment_impute(mtcars, c('mpg', 'cyl'), 0.1)
 transform.augment_impute <- function(dataf, variables = colnames(dataf), missingThreshold = 0.3) {
         if (!is.data.frame(dataf)) stop('Please pass a dataframe as parameter')
         for (i in variables) {
